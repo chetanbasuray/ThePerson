@@ -12,19 +12,17 @@ class Person:
         
     def greet(self) -> None:
         """Do a simple greeting and introduction."""
-        self.say(f"Hello! My name is {self.name}.")
+        Person.say(f"Hello! My name is {self.name}.")
 
-    def say(self,
-            *args: object,
+    @staticmethod
+    def say(*args: object,
             sep: str | None = " ",
             end: str | None = "\n",
-            file=None,
+            file = None,
             flush: bool = False) -> None:
         """Say a word, phrase, sentence or paragraph."""
         print(*args, sep=sep, end=end, file=file, flush=flush)
-    
-        print(f'Hello! My name is {self.name}.')
-
+        
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
         intro = f"Hi, my name is {self.name}."
