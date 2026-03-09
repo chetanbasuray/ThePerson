@@ -12,19 +12,13 @@ your creativity.
 
 ## 📝 Table of Contents
 
-- [Contributions You Can Make](#contributions-you-can-make)
-
-
-- [Pull Request Steps](#pull-request-steps)
-- [Task Issues](#task-issues)
-- [Making Your First Contribution](#making-your-first-contribution)
-
-
-- [Code Guidelines](#code-guidelines)
-
-
-- [Reporting a Bug](#reporting-a-bug)
-- [Suggesting a Feature](#suggesting-a-feature)
+- [Contributions You Can Make](#-contributions-you-can-make)
+- [Pull Request Steps](#-pull-request-steps)
+- [Task Issues](#-task-issues)
+- [Making Your First Contribution](#-making-your-first-contribution)
+- [Code Guidelines](#-code-guidelines)
+- [Reporting a Bug](#-reporting-a-bug)
+- [Suggesting a Feature](#-suggesting-a-feature)
 
 ---
 
