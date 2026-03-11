@@ -96,15 +96,15 @@ class Person:
         
         today = datetime.today()
         default_message = (
-                message or f"Happy {day.capitalize()}, {self.name}! 🎉"
+            message or f"Happy {day.capitalize()}, {self.name}! 🎉"
         )
         
         if check_date:
             if celebration_date is None:
                 self.say(f"No date set for {self.name}'s {day} yet.")
             elif (
-                    today.month == celebration_date.month
-                    and today.day == celebration_date.day
+                today.month == celebration_date.month
+                and today.day == celebration_date.day
             ):
                 self.say(default_message)
             else:
