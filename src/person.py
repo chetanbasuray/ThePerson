@@ -27,11 +27,11 @@ class Person:
         self.married_date = married_date
         self.graduation_date = graduation_date
         self.death_date = death_date
-    
+
     def greet(self) -> None:
         """Do a simple greeting and introduction."""
         self.say(f"Hello! My name is {self.name}.")
-    
+
     @staticmethod
     def say(*args: object,
             sep: str | None = " ",
@@ -40,7 +40,7 @@ class Person:
             flush: bool = False) -> None:
         """Say a word, phrase, sentence or paragraph."""
         print(*args, sep=sep, end=end, file=file, flush=flush)
-    
+
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
         intro = f"Hi, my name is {self.name}."
@@ -55,12 +55,13 @@ class Person:
         if self.occupation is not None:
             intro += f" I work as a {self.occupation}."
         self.say(intro)
-    
+
     def celebrate(self,
                   day: str = "birthday",
                   check_date: bool = True,
-                  message: str | None = None,) -> None:
-        """Celebrate a special day for the person.
+                  message: str | None = None,
+                  target: "Person | None" = None) -> None:
+        """Celebrate a special day for self or another person.
 
         Args:
             day: The name of the celebration (e.g. 'birthday', 'married').
@@ -69,6 +70,7 @@ class Person:
                         celebration date before printing the message.
             message: A custom message to print. If None, a default message
                      is used.
+            target: Another Person to celebrate. If None, celebrates self.
 
         Raises:
             AttributeError: If the celebration day attribute does not exist.
@@ -77,40 +79,52 @@ class Person:
         """
         if not isinstance(day, str):
             raise TypeError(f"'day' must be a string, got {type(day).__name__}")
-        
+
+        person = target if target is not None else self
         attr = f"{day}_date"
-        if not hasattr(self, attr):
+        if not hasattr(person, attr):
             raise AttributeError(
                 f"'{day}' is not a recognised celebration "
                 f"(could not find attribute '{attr}')"
             )
-        
-        celebration_date: datetime | None = getattr(self, attr)
-        
+
+        celebration_date: datetime | None = getattr(person, attr)
+
         if (celebration_date is not None
                 and not isinstance(celebration_date, datetime)):
             raise TypeError(
                 f"'{attr}' must be a datetime or None, "
                 f"got {type(celebration_date).__name__}"
             )
-        
+
         today = datetime.today()
-        default_message = (
-            message or f"Happy {day.capitalize()}, {self.name}! 🎉"
-        )
-        
+        if target is not None:
+            default_message = (
+                message or f"Happy {day.capitalize()}, {target.name}! \U0001f389"
+            )
+            unknown_message = f"I don't know {target.name}'s {day}..."
+            not_today_message = (
+                f"Today is not {target.name}'s {day} yet, but it's coming "
+                f"soon!"
+            )
+        else:
+            default_message = (
+                message or f"Happy {day.capitalize()} to me! \U0001f389"
+            )
+            unknown_message = f"I don't know my {day}..."
+            not_today_message = (
+                f"Today is not my {day} yet, but it's coming soon!"
+            )
+
         if check_date:
             if celebration_date is None:
-                self.say(f"No date set for {self.name}'s {day} yet.")
+                self.say(unknown_message)
             elif (
                 today.month == celebration_date.month
                 and today.day == celebration_date.day
             ):
                 self.say(default_message)
             else:
-                self.say(
-                    f"Today is not {self.name}'s {day} yet, but it's coming "
-                    f"soon!"
-                )
+                self.say(not_today_message)
         else:
             self.say(default_message)
