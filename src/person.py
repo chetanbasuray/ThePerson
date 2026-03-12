@@ -74,8 +74,7 @@ class Person:
 
         Raises:
             AttributeError: If the celebration day attribute does not exist.
-            TypeError: If the celebration date attribute is not a date or
-                       is None.
+            TypeError: If the celebration date attribute is not a date.
         """
         if not isinstance(day, str):
             raise TypeError(f"'day' must be a string, got {type(day).__name__}")
