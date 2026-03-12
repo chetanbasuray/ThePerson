@@ -34,6 +34,9 @@ Any addition to the project will be very much appreciated, even small ones.
 
 ## 👣 Pull Request Steps
 
+(NOTE: Read "[Suggesting a Feature](#-suggesting-a-feature)" first if you 
+plan on adding an enhancement to the project)
+
 1. Create a fork of [the repository][repo]
 2. Clone the forked repository to your local machine
 3. Create a new branch with a meaningful name (include the type of change 
@@ -56,6 +59,9 @@ Any addition to the project will be very much appreciated, even small ones.
    - e.g.) `feature/feature-name`, `fix/issue-12`
    
 4. Make and commit your changes
+   - Commit messages should be in the imperative tone without a period
+     - e.g.: `Add test files`, `Fix attribute assignments`, `Update 
+     documentation`
 5. Push commits to GitHub (if you have made changes locally on your machine)
 6. Create and submit a pull request
 7. Request a review from a maintainer
@@ -65,6 +71,18 @@ and polishes before approval.
 
 You should receive a notification/email once your changes have been merged 
 onto the main branch of this project.
+
+### ⚠️ THINGS TO KEEP IN MIND:
+- Avoid working directly on `main`; always create a new branch on your fork.
+- To avoid conflicts, always remember to update your local fork (`git pull`) 
+  before working.
+- If you forgot to update your fork before working, run `git pull --rebase` 
+  and resolve conflicts (if any).
+  - If you run into any trouble during conflict resolution, or are not sure 
+    how to resolve a conflict, tag a maintainer/reviewer in an appropriate 
+    issue or PR comment section, or in a [Discussion][repo-disc], for help.
+- Minimize how much code you touch outside what you are working on; change 
+  only what you are focusing on doing and avoid changing others' code.
 
 ## 📋 Task Issues
 
@@ -119,7 +137,7 @@ GitHub, [here's a repo][first-contribs] with information that might help.
 
 ## 🧭 Code Guidelines
 
-Here are **3 rules** I have with writing (Python) code:
+Here are **3 rules** we have with writing (Python) code:
 
 > `1.` Try to follow PEP 8 as much as possible
 
@@ -168,6 +186,9 @@ To report a bug:
 ---
 
 ## ☝️ Suggesting a Feature
+
+(We recommend opening a feature request before working on an issue, even if 
+you are confident in your feature.)
 
 If:
 - You do not wish to code any features yourself
