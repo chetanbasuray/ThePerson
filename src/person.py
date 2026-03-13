@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TextIO
 from datetime import date
 
-from .mood import Mood
+from mood import Mood
 
 
 class Person:

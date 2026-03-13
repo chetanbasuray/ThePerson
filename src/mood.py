@@ -197,3 +197,4 @@ class Mood:
     def __repr__(self) -> str:
         """Return a detailed representation of the mood."""
         return f"Mood(name={self.name!r}, intensity={self.intensity})"
+    
