@@ -33,11 +33,9 @@ class Person:
         self.death_date = death_date
         self.mood = Mood()
 
-
     def greet(self) -> None:
         """Do a simple greeting and introduction."""
         self.say(f"Hello! My name is {self.name}.")
-
 
     @staticmethod
     def say(*args: object,
@@ -47,13 +45,6 @@ class Person:
             flush: bool = False) -> None:
         """Say a word, phrase, sentence or paragraph."""
         print(*args, sep=sep, end=end, file=file, flush=flush)
-
-
-    @staticmethod
-    def wave() -> None:
-        """Wave a hand."""
-        print("\U0001f44b")  # Unicode for waving hand emoji
-
 
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
@@ -69,7 +60,6 @@ class Person:
         if self.occupation is not None:
             intro += f" I work as a {self.occupation}."
         self.say(intro)
-
 
     def celebrate(self,
                   day: str = "birthday",
@@ -143,3 +133,4 @@ class Person:
                 self.say(not_today_message)
         else:
             self.say(default_message)
+    
