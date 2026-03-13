@@ -42,22 +42,25 @@ class Mood:
             ValueError: If the mood name is not recognised or intensity
                         is out of range.
         """
-        self._set_name(name)
-        self._set_intensity(intensity)
+        self.name = self._validate_name(name)
+        self.intensity = self._validate_intensity(intensity)
 
     # ------------------------------------------------------------------
     # Private helpers
     # ------------------------------------------------------------------
 
-    def _set_name(self, name: str) -> None:
-        """Validate and set the mood name.
+    def _validate_name(self, name: str) -> str:
+        """Validate and return the mood name.
 
         Args:
-            name: The mood name to set.
+            name: The mood name to validate.
 
         Raises:
             TypeError: If name is not a string.
             ValueError: If name is not a recognised mood.
+
+        Returns:
+            The validated mood name.
         """
         if not isinstance(name, str):
             raise TypeError(
@@ -69,17 +72,20 @@ class Mood:
                 f"'{name}' is not a recognised mood. "
                 f"Valid moods are: {', '.join(sorted(VALID_MOODS))}."
             )
-        self.name = name
+        return name
 
-    def _set_intensity(self, intensity: float) -> None:
-        """Validate and set the mood intensity.
+    def _validate_intensity(self, intensity: float) -> float:
+        """Validate and return the mood intensity.
 
         Args:
-            intensity: The intensity value to set.
+            intensity: The intensity value to validate.
 
         Raises:
             TypeError: If intensity is not a float or int.
             ValueError: If intensity is outside [0, 1].
+
+        Returns:
+            The validated intensity as a float.
         """
         if not isinstance(intensity, (int, float)):
             raise TypeError(
@@ -91,9 +97,8 @@ class Mood:
                 f"Intensity must be between 0 and 1, got {intensity}."
             )
         if self.name == "neutral":
-            self.intensity: float = 0.0
-        else:
-            self.intensity = intensity
+            return 0.0
+        return intensity
 
     # ------------------------------------------------------------------
     # Public methods
@@ -106,8 +111,8 @@ class Mood:
             name: The new mood name.
             intensity: The intensity of the new mood. Defaults to 0.5.
         """
-        self._set_name(name)
-        self._set_intensity(intensity)
+        self.name = self._validate_name(name)
+        self.intensity = self._validate_intensity(intensity)
 
     def intensify(self, amount: float = 0.1) -> None:
         """Increase the mood intensity by a given amount.
@@ -116,12 +121,16 @@ class Mood:
             amount: How much to increase intensity by. Defaults to 0.1.
 
         Raises:
-            ValueError: If amount is negative.
+            ValueError: If amount is negative or mood is neutral.
         """
         if amount < 0:
             raise ValueError(
                 "Amount must be non-negative. Use calm_down() to decrease "
                 "intensity."
+            )
+        if self.name == "neutral":
+            raise ValueError(
+                "Cannot intensify a neutral mood. Use set_mood() first."
             )
         self.intensity = min(1.0, self.intensity + amount)
 
