@@ -60,7 +60,9 @@ class Mood:
             ValueError: If name is not a recognised mood.
         """
         if not isinstance(name, str):
-            raise TypeError(f"Mood name must be a string, got {type(name).__name__}.")
+            raise TypeError(
+                f"Mood name must be a string, got {type(name).__name__}."
+            )
         name = name.lower().strip()
         if name not in VALID_MOODS:
             raise ValueError(
@@ -117,7 +119,10 @@ class Mood:
             ValueError: If amount is negative.
         """
         if amount < 0:
-            raise ValueError("Amount must be non-negative. Use calm_down() to decrease intensity.")
+            raise ValueError(
+                "Amount must be non-negative. Use calm_down() to decrease "
+                "intensity."
+            )
         self.intensity = min(1.0, self.intensity + amount)
 
     def calm_down(self, amount: float = 0.1) -> None:
@@ -173,7 +178,8 @@ class Mood:
             else "moderately" if self.intensity < 0.7
             else "very"
         )
-        return f"feeling {intensity_label} {self.name} (intensity: {self.intensity:.2f})."
+        return (f"feeling {intensity_label} {self.name} "
+                f"(intensity: {self.intensity:.2f}).")
 
     def __str__(self) -> str:
         """Return a string representation of the mood."""
