@@ -12,3 +12,6 @@ disable=
     too-many-locals,
     too-few-public-methods,
     trailing-whitespace
+
+[FORMAT]
+max-line-length=80
