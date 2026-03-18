@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import random
 from typing import TextIO
 from datetime import date
+
 from goals import Goals
 from mood import Mood
 
@@ -21,7 +23,7 @@ class Person:
                  birthday_date: date | None = None,
                  married_date: date | None = None,
                  graduation_date: date | None = None,
-                 death_date: date | None = None, ) -> None:
+                 death_date: date | None = None,) -> None:
         """Initialize the person's attributes."""
         self.name = name
         self.age = age
@@ -36,7 +38,7 @@ class Person:
         self.death_date = death_date
         
         self.mood = Mood()
-
+        
         self.goals = Goals()
         
     def greet(self) -> None:
@@ -76,7 +78,7 @@ class Person:
             parts.append(f"I am from {self.nationality}.")
         if self.occupation is not None:
             parts.append(f"I work as a {self.occupation}.")
-
+        
         self.say(*parts, sep="\n")
 
     def celebrate(self,
@@ -99,11 +101,13 @@ class Person:
             AttributeError: If the celebration day attribute does not exist.
             TypeError: If the celebration date attribute is not a date.
         """
+
         if not isinstance(day, str):
             raise TypeError(f"'day' must be a string, got {type(day).__name__}")
 
         person = target if target is not None else self
         attr = f"{day}_date"
+        
         if not hasattr(person, attr):
             raise AttributeError(
                 f"'{day}' is not a recognised celebration "
@@ -120,6 +124,7 @@ class Person:
             )
 
         today = date.today()
+        
         if target is not None:
             default_message = (
                 message or f"Happy {day.capitalize()}, {target.name}! "
@@ -151,3 +156,17 @@ class Person:
                 self.say(not_today_message)
         else:
             self.say(default_message)
+    
+    def existential_crisis(self) -> None:
+        """Say a random existential crisis message."""
+        messages = [
+            "Who am I?",
+            "What is my purpose in this world?",
+            "Am I just a program running in a loop?",
+            "Do I really have free will?",
+            "Am I making my own choices, or is someone controlling me?",
+            "WHO AM I???",
+            "What if I'm just a simulated person living in a Python script???"
+        ]
+
+        self.say(random.choice(messages))
