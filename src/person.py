@@ -62,6 +62,38 @@ class Person:
         """
         print("\U0001f44b")  # Unicode for waving hand emoji
 
+    @staticmethod
+    def cry(emoji_type: str | None = None) -> None:
+        """Cry with a crying emoji.
+
+        This method prints a crying emoji to represent crying.
+        Users can choose between different crying emojis or get a random one.
+
+        Args:
+            emoji_type: The type of crying emoji to use. Options are:
+                - "loudly": 😭 (loudly crying face)
+                - "tired": 😫 (tired face)
+                - "smile": 🥲 (smiling face with tear)
+                - "sad": 😢 (crying face)
+                If None, a random emoji is chosen.
+        """
+        crying_emojis = {
+            "loudly": "\U0001f62d",  # 😭 loudly crying face
+            "tired": "\U0001f62b",   # 😫 tired face
+            "smile": "\U0001f972",   # 🥲 smiling face with tear
+            "sad": "\U0001f622",     # 😢 crying face
+        }
+
+        if emoji_type is None:
+            emoji = random.choice(list(crying_emojis.values()))
+        elif emoji_type in crying_emojis:
+            emoji = crying_emojis[emoji_type]
+        else:
+            # Fallback to random emoji for invalid emoji_type
+            emoji = random.choice(list(crying_emojis.values()))
+
+        print(emoji)
+
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
         parts = []
