@@ -10,7 +10,8 @@ from dataclasses import dataclass, field
 from .goals import Goals
 from .mood import Mood
 
-__all__ = ["Profile", "Professional", "LifeDates", "Person"]
+__all__ = ["Profile", "Physical", "Professional", "LifeDates", "Person"]
+
 
 @dataclass
 class Profile:
@@ -20,11 +21,17 @@ class Profile:
     age: int | None = None
     gender: str | None = None
     nationality: str | None = None
+    hobbies: list[str] = field(default_factory=list)
 
 
 @dataclass
 class Physical:
+    """Physical characteristics such as height, weight and appearance."""
+
     height: float | None = None
+    weight: float | None = None
+    skin_tone: str | None = None
+    hair_color: str | None = None
 
 
 @dataclass
@@ -32,8 +39,9 @@ class Professional:
     """Professional/career information."""
 
     occupation: str | None = None
-    
-    
+    skills: list[str] = field(default_factory=list)
+
+
 @dataclass
 class LifeDates:
     """Store important life dates for a person."""
@@ -58,11 +66,15 @@ class Person:
         
         self.profile = profile if profile is not None else Profile()
         self.physical = physical if physical is not None else Physical()
-        self.professional = professional if professional is not None else Professional()
-        self.life_dates = life_dates if life_dates is not None else LifeDates()
+        self.professional = (
+            professional if professional is not None else Professional()
+        )
+        self.life_dates = (
+            life_dates if life_dates is not None else LifeDates()
+        )
         self.mood = mood if mood is not None else Mood()
         self.goals = goals if goals is not None else Goals()
-        
+
     def greet(self) -> None:
         """Do a simple greeting and introduction."""
         self.say(f"Hello! My name is {self.profile.name}.")
