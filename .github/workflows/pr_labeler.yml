@@ -20,7 +20,7 @@ jobs:
               ["bug", /^(bugfix|bug|hotfix)\b/i],
               ["enhancement", /^(feat|feature)\b/i],
               ["ui", /^(ui)\b/i],
-              ["format", /^(format)\b/i],
+              ["format", /^(format|style)\b/i],
               ["refactor", /^(refact|refactor)\b/i],
               ["work in progress", /^(wip)\b/i],
               ["experiment", /^(exp|experiment)\b/i],

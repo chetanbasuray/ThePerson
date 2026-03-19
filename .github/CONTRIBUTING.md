@@ -16,6 +16,7 @@ these contributing guidelines.
 ## 📝 Table of Contents
 
 - [✨ Contributions You Can Make](#-contributions-you-can-make)
+- [📐 Requirements](#-requirements)
 - [🚦 Opening Issues](#-opening-issues)
   - [🐛 Reporting Bugs](#-reporting-bugs)
   - [☝️ Suggesting Features](#-suggesting-features)
@@ -35,6 +36,16 @@ There are many ways you can contribute: Adding a feature, fixing code,
 finding and reporting bugs, improving documentation, and more!
 
 Any addition to the project will be very much appreciated, even small ones.
+
+## 📐 Requirements
+
+- **Python 3.12 and above** (recommended)
+- A recognized IDE / code editor, for example:
+  - Visual Studio Code
+  - JetBrains IDEs (PyCharm, IntelliJ, WebStorm, etc.)
+  - Visual Studio
+  - Eclipse
+  - **NOT** the GitHub web editor or a basic text editor
 
 ---
 
