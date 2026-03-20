@@ -5,6 +5,8 @@ title: 'TASK: Task title here'
 labels: ['good first issue', 'help wanted', task]
 ---
 
+**Leave a comment if you wish to work on this task!**
+
 **Difficulty:** 
 
 **TODO**:
@@ -21,11 +23,15 @@ labels: ['good first issue', 'help wanted', task]
 7. Submit the PR (Ensure you allow maintainers to edit)
 8. _Optional: Request a review from a code owner_
 
-Please make sure you have read the [Contribution Guidelines][contrib] before 
+Please make sure you have read the [Contributing Guidelines][contrib] before 
 working.
 
-Feel free to ask any questions here.
-**Leave a comment** if you wish to work on this task!
+Feel free to ask any questions here!
 
-[contrib]: https://github.com/TheGittyPerson/ThePerson/blob/7ca2ee060799edced7722ce867d2cace53eac1e0/.github/CONTRIBUTING.md
+If you are interested in working on this task, **please leave a comment 
+requesting assignment** to explicitly let others know the task is taken and 
+prevent duplicate PRs.
+
+[contrib]: 
+https://github.com/TheGittyPerson/ThePerson/blob/main/.github/CONTRIBUTING.md
 [pep-8]: https://peps.python.org/pep-0008/

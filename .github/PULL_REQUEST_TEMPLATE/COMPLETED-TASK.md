@@ -1,8 +1,6 @@
-Summarize your changes here.
-
 ## Changes
 
-- Describe the changes you made in more detail.
+- Describe the changes you made in detail.
 - You may use bullet points
 
 Resolves #<task-issue-number>

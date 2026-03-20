@@ -13,8 +13,23 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: >-
-          Thanks for opening your first issue on this repository! Make sure
-          you've read our contributing guidelines — it's very important to us.
+          Thanks for opening your first issue on this repository! Make sure you've read our
+          [contributing guidelines](https://github.com/TheGittyPerson/ThePerson/blob/main/.github/CONTRIBUTING.md)
+          — it's very important to us.
+          
+          Key things to remember when contributing to this repo:
+            - Avoid touching others' code when possible
+            - **Rebase > Merge**; When updating your PR branch, always use a rebase and resolve conflicts
+            - Try to follow PEP 8
+            - Avoid using AI to generate _most_ of your code, comments, or issue/PR descriptions
+
         pr-message: >-
-          Thanks for opening your first PR on this repository! Make sure you've
-          read our contributing guidelines — it's very important to us.
+          Thanks for opening your first PR on this repository! Make sure you've read our 
+          [contributing guidelines](https://github.com/TheGittyPerson/ThePerson/blob/main/.github/CONTRIBUTING.md)
+          — it's very important to us.
+          
+          Key things to remember when contributing to this repo:
+            - Avoid touching others' code when possible
+            - **Rebase > Merge**; When updating your PR branch, always use a rebase and resolve conflicts
+            - Try to follow PEP 8
+            - Avoid using AI to generate _most_ of your code, comments, or issue/PR descriptions

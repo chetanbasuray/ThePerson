@@ -116,7 +116,9 @@ class Person:
             "sad": "\U0001f622",     # 😢 crying face
         }
 
-        emoji = crying_emojis.get(emoji_type, random.choice(list(crying_emojis.values())))
+        emoji = crying_emojis.get(
+            emoji_type, random.choice(list(crying_emojis.values()))
+        )
         print(emoji)
 
     def introduce(self) -> None:

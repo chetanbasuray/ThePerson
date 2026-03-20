@@ -5,17 +5,18 @@
 Thanks for considering contributing to this open-source project! Both beginners 
 and experts are very welcome here.
 
-This project is purely for entertainment purposes, so do have fun and let your 
-creativity flow.
+This project is purely for entertainment purposes, so _do_ have fun and let 
+your creativity flow.
 
 If you want to contribute to The Person, I recommend you take the time to read 
-these contribution guidelines.
+these contributing guidelines, or at least skim through it.
 
 ---
 
 ## 📝 Table of Contents
 
 - [✨ Contributions You Can Make](#-contributions-you-can-make)
+- [📐 Requirements](#-requirements)
 - [🚦 Opening Issues](#-opening-issues)
   - [🐛 Reporting Bugs](#-reporting-bugs)
   - [☝️ Suggesting Features](#-suggesting-features)
@@ -36,6 +37,16 @@ finding and reporting bugs, improving documentation, and more!
 
 Any addition to the project will be very much appreciated, even small ones.
 
+## 📐 Requirements
+
+- **Python 3.12 and above** (recommended)
+- A recognized IDE / code editor, for example:
+  - Visual Studio Code (with a proper linter or code analyzer installed)
+  - JetBrains IDEs (PyCharm, IntelliJ, WebStorm, etc.)
+  - Visual Studio
+  - Eclipse
+  - **NOT** the GitHub web editor or a basic text editor
+
 ---
 
 ## 🚦 Opening Issues
@@ -51,8 +62,8 @@ automated bot accounts that usually come with low effort and minimal engagement.
 
 To report a bug:
 1. On the repository on GitHub, go to the [Issues][repo-issues] tab.
-2. Select "New issue"
-3. **Template selection: Choose "Bug report"**
+2. Select "New issue".
+3. **Template selection: Choose "Bug report"**.
 4. Describe the issue thoroughly, using the template as a guide
    - If your issue description severely lacks information, maintainers may 
      close it.
@@ -62,9 +73,9 @@ To report a bug:
 
 To suggest a feature:
 1. On the repository on GitHub, go to the [Issues][repo-issues] tab.
-2. Select "New issue"
+2. Select "New issue".
 3. **Template selection: Choose "Feature request"**
-4. Describe the feature thoroughly, using the template as a guide
+4. Describe the feature thoroughly, using the template as a guide.
     - If your issue description severely lacks information, maintainers may 
       close it.
 5. Submit the issue.
@@ -78,34 +89,34 @@ To suggest a feature:
 (NOTE: Read "[Opening Issues](#-opening-issues)" first if you plan on adding an 
 enhancement to the project or fixing a bug)
 
-1. Create a fork of [the repository][repo]
-2. Clone the forked repository to your local machine
+1. Create a fork of [the repository][repo].
+2. Clone the forked repository to your local machine.
 3. Create a new branch with a meaningful name (include the type of change 
-   followed by a slash; use hierarchical branch naming)
+   followed by a slash; use hierarchical branch naming).
 
-   | Prefix         | Description                                    |
-   |----------------|------------------------------------------------|
-   | `bugfix`/`fix` | Bug fix (minor, not urgent)                    |
-   | `hotfix`       | Urgent, critical fix                           |
-   | `feature`      | New feature/functionality                      |
-   | `ui`           | Affects user interface only                    |
-   | `docs`         | Documentation only                             |
-   | `format`       | Formatting fixes                               |
-   | `refact`       | Code improvements that do not affect behaviour |
-   | `wip`          | Work in progress                               |
-   | `experiment`   | Temporary, experimental code; playground       |
-   | `mix`          | A combination of different fixes/changes       |
-   | `misc`         | Other (not recommended)                        |
+   | Prefix           | Description                                    |
+   |------------------|------------------------------------------------|
+   | `bugfix`/`fix`   | Bug fix (minor, not urgent)                    |
+   | `hotfix`         | Urgent, critical fix                           |
+   | `feature`        | New feature/functionality                      |
+   | `ui`             | Affects user interface only                    |
+   | `docs`           | Documentation only                             |
+   | `format`/`style` | Formatting fixes                               |
+   | `refactor`       | Code improvements that do not affect behaviour |
+   | `wip`            | Work in progress                               |
+   | `experiment`     | Temporary, experimental code; playground       |
+   | `mix`            | A combination of different fixes/changes       |
+   | `misc`           | Other; miscellaneous (not recommended)         |
 
    - e.g.) `feature/feature-name`, `fix/issue-12`
    
-4. Make and commit your changes
-   - Commit messages should be in the imperative tone without a period
+4. Make and commit your changes.
+   - Commit messages should be in the imperative tone without a period.
      - e.g.: `Add test files`, `Fix attribute assignments`, `Update 
      documentation`
-5. Push commits to GitHub (if you have made changes locally on your machine)
-6. Create and submit a pull request
-7. Request a review from a maintainer
+5. Push commits to GitHub (if you have made changes locally on your machine).
+6. Create and submit a pull request.
+7. Request a review from a maintainer.
 
 We will likely need to discuss the changes you make and apply some tweaks 
 and polishes before approval.
@@ -115,7 +126,7 @@ into the main branch of this project.
 
 ### ⚠️ THINGS TO KEEP IN MIND
 - **Rebase > Merge**: When updating a branch, **always use a rebase** and 
-  resolve conflicts. This is to keep commit history nice and linear. The 
+  resolve conflicts. This is to keep the commit history nice and linear. The 
   only time you should see a merge commit is when your pull request is 
   merged into upstream `main`.
 - **Avoid working directly on `main`**; always create a new branch on your fork.
@@ -137,10 +148,10 @@ Some issues will be opened in the [Issues tab][repo-issues] on GitHub, labeled
 `task`. 
 
 **If you are interested in completing a task**: 
-1. Make sure you give the instructions in the task description a proper read
-2. **Leave a comment requesting assignment under the issue**
-3. Wait for a thumbs-up from a maintainer
-4. Follow the steps above to create a fork and PR with your changes
+1. Make sure you give the instructions in the task description a proper read.
+2. **Leave a comment requesting assignment for the issue**.
+3. Wait for a thumbs-up from a maintainer.
+4. Follow the steps above to create a fork and PR with your changes.
 5. Start coding!
 
 **When writing the pull request**:
@@ -175,7 +186,13 @@ Each task issue is labeled with its approximate difficulty level.
 
 To ensure fair distribution of tasks amongst contributors, **please 
 try to complete tasks labeled with your level of coding experience only** 
-(everyone should have a chance to contribute)
+(everyone should have a chance to contribute).
+
+#### Regarding the use of AI:
+The purpose of this project is to provide a learning opportunity for growing 
+developers, and using AI to complete [tasks](#-task-issues) defeats this 
+purpose. It is okay to make mistakes when completing tasks — reviewers will 
+be happy to correct them and give feedback.
 
 ## 🧑‍💻 Code Guidelines
 
@@ -183,7 +200,7 @@ Here are **3 rules** you should remember when writing code:
 
 > `1.` Styling matters
 
-Writing properly styled and formatted code ensures your code can be easily 
+Writing properly styled and formatted code ensures that your code can be easily 
 read and understood by everyone.
 
 For Python code, follow [PEP 8][pep-8].
@@ -200,7 +217,7 @@ Key things to keep in mind include:
 - **Line separations** (2 blank lines around classes and functions, etc.)
 - **Order of import statements** (standard → third-party → local)
 
-Take a look at existing code on the repo to get an idea of the code style.
+Take a look at the existing code on the repo to get an idea of the code style.
 
 If you are unfamiliar with PEP 8, please [give it a quick read][pep-8].
 
@@ -209,8 +226,8 @@ If you are unfamiliar with PEP 8, please [give it a quick read][pep-8].
 > `2.` Always assume the user is stupid
 
 Special cases (almost) always exist. Make sure you take into account as many 
-input possibilities as you can, even those that anyone in the right mind would 
-never think of.
+input possibilities as you can, even those that anyone in their right mind 
+would never think of.
 
 ===============================================
 
@@ -228,7 +245,7 @@ Pull request steps:
 1. Fork and clone this repository
 2. **Create a new branch** using the special prefix `town`. Name the branch 
    `town/add-yourname`.
-    - Replace `yourname` with your name, e.g. `town/add-morpheus`
+    - Replace `yourname` with your name, e.g., `town/add-morpheus`
 3. Commit your changes and push to your remote fork.
 4. Open a pull request
 5. Await approval

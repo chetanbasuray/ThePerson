@@ -1,8 +1,8 @@
-Summarize what the feature does and why it’s needed.
+Summarize what the feature does and why it’s needed here.
 
 ## How it works
 
-Describe the feature added in more depth here.
+Then, describe the feature added in more depth here.
 
 ```python
 You can provide code snippets of your feature with some examples.

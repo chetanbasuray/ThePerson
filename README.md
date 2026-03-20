@@ -26,7 +26,7 @@ creativity. We also aim to keep our community safe and engaging for everyone.
 - **Be Part of The Town**: _The Town_ is a fun little community that anyone 
   can join. Read [the section below](#-be-part-of-the-town) to find out more.
 
-Read our [Contribution Guidelines][contrib] to get started.
+Read our [Contributing Guidelines][contrib] to get started.
 
 ## 📋 Completing Tasks
 
@@ -35,9 +35,9 @@ issues labeled `task` and are contributions you can make with specific
 instructions and more guidance. 
 
 If you are interested in completing a task: 
-- **Leave a comment requesting assignment under the issue**.
-- Wait for a thumbs-up from a maintainer
-- Give our [Contribution Guidelines][contrib] a read
+- **Leave a comment requesting assignment for the issue**.
+- Wait for a thumbs-up from a maintainer.
+- Give our [Contributing Guidelines][contrib] a read.
 - Start coding!
 
 #### Note:
@@ -58,18 +58,18 @@ following the guidelines under "The Town" will be closed.
   job to fix it.
 - Don't change, add, or remove other townsfolk's attributes or called methods.
 - Don't kill your neighbors (Don't remove `Person` instances other than your 
-  own)
+  own).
 
 ## 🤖 AI-Assisted Contributions
 
 In this repository, maintainers are expected to minimize the use of AI and 
 prioritize human interaction; other than in GitHub Actions workflows and 
-assissance in code reviews, all comments, review messages, task issues, and 
-documentation are written by human hands, ensuring any AI assisstance is 
-thoroughly reviewed and understood. 
+assistance in code reviews, all comments, review messages, task issues, and 
+documentation are written by human hands, ensuring any AI assistance is 
+**thoroughly reviewed and understood**.
 
-We expect the same from contributors and 
-discourage using AI as more than just a tool. (Read our [Code of Conduct][coc])
+We expect the same from contributors and **discourage using AI as more than 
+just a tool**.(Read our [Code of Conduct][coc])
 
 AI tools can be helpful during development, and contributors are allowed to use
 them as **assistive tools**. However, this project does **not accept fully 
@@ -83,9 +83,11 @@ may be **closed without merging**.
 
 If you used AI assistance, please disclose it briefly in your PR description.
 
-Please read the [Contribution Guidelines][contrib] for more information.
+Please read the [Contributing Guidelines][contrib] for more information.
 
-## 💻 How to use
+---
+
+## 💻 How to Use
 
 To try using the project yourself on your computer, follow these steps.
 
@@ -95,10 +97,32 @@ On the [GitHub page][repo]:
 3. Unzip the ZIP file on your machine.
 4. Extract any of the files in `theperson` to implement in your own projects!
 
+### Quick Start for Beginners
+
+Before trying this out:
+1. Ensure you have **Python installed on your computer**. (Install the latest 
+   version [here][python-download] and follow installation procedures)
+2. Follow the steps [here](#-how-to-use) to download the program.
+
+After downloading the source code:
+1. **Open `the_town.py` with IDLE** (the code editor that comes with your 
+   Python installation): `Right-click the file → Open With... → IDLE`
+   - If `IDLE` doesn't appear as an option, open the IDLE app manually and 
+     select `Open → 'the_town.py'`
+2. **Edit the code** however you like.
+3. On the menu bar at the top of your screen (or the top of the window for 
+   Windows), **select `Run → Run Module`**
+4. Keep experimenting!
+
+If you have **any questions** or would like **assistance or guidance with 
+coding in general**, feel free to **open a [Discussion][repo-disc]** in this 
+repository's GitHub page — experienced developers in our community will be 
+happy to help you out.
+
 ## ❓ Questions/Requests
 
-If you have a question or something to say, open a discussion 
-[here][repo-disc], or leave a comment in an existing discussion.
+If you have a question or something to say, open a discussion [here]
+[repo-disc], or leave a comment in an existing discussion.
 
 ## 📜 License
 
@@ -106,8 +130,8 @@ This project is licensed under the [MIT License](LICENSE.txt).
 
 ---
 
-Please [drop us a star][repo] to ensure this reaches as many devs as 
-possible 🙏 (PLEASE 🙏🙏🙏)
+If you enjoyed contributing to this project or appreciate the concept, consider 
+[dropping us a star][repo] to help others discover it! 🙏
 
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
@@ -115,3 +139,4 @@ possible 🙏 (PLEASE 🙏🙏🙏)
 [contrib]: /.github/CONTRIBUTING.md
 [coc]: /.github/CODE_OF_CONDUCT.md
 [profile]: https://github.com/TheGittyPerson
+[python-download]: https://www.python.org/downloads/

@@ -1,8 +1,8 @@
-Summarize your changes here.
-
 ## Bug Fixed
 
-Describe the bug/issue you fixed.
+Describe the bug (or reference the bug report).
+
+Then, describe how you fixed this bug
 
 ## Changes
 
