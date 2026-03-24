@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 
 from .goals import Goals
 from .mood import Mood
+from .inventory import Inventory
 
 
 @dataclass
@@ -60,7 +61,8 @@ class Person:
                  professional: Professional | None = None,
                  life_dates: LifeDates | None = None,
                  mood: Mood | None = None,
-                 goals: Goals | None = None,) -> None:
+                 goals: Goals | None = None,
+                 inventory: Inventory | None = None,) -> None:
         """Initialize the person's attributes."""
         
         self.profile = profile if profile is not None else Profile()
@@ -73,6 +75,7 @@ class Person:
         )
         self.mood = mood if mood is not None else Mood()
         self.goals = goals if goals is not None else Goals()
+        self.inventory = inventory if inventory is not None else Inventory()
 
     def greet(self) -> None:
         """Do a simple greeting and introduction."""
