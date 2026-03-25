@@ -10,3 +10,10 @@ if __name__ == "__main__":
     )
 
     morpheus.introduce()
+
+    syed = Person(
+        profile=Profile(name="Syed Abdul Aman", gender="male"),
+        professional=Professional(occupation="Generative AI Developer"),
+    )
+
+    syed.introduce()
