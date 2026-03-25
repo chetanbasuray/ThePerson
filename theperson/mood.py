@@ -216,7 +216,7 @@ class Mood:
         # Map 0.0–1.0 intensity to 1–10 scale
         level = max(1, round(self.intensity * 10))
 
-        _EMOJI_MAP: dict[str, list[str]] = {
+        emoji_map: dict[str, list[str]] = {
             "happy": ["🙂", "🙂", "😊", "😊", "😄", "😄", "😁", "😁", "🤩", "🤩"],
             "sad": ["😕", "😕", "🙁", "🙁", "☹️", "☹️", "😔", "😔", "🥺", "😭"],
             "angry": ["😤", "😤", "😠", "😠", "😡", "😡", "🤬", "🤬", "💢", "💢"],
@@ -230,5 +230,6 @@ class Mood:
             "confused": ["🤔", "🤔", "😕", "😕", "🫤", "🫤", "😵", "😵", "😵‍💫", "😵‍💫"],
         }
 
-        emojis = _EMOJI_MAP.get(self.name, ["😐"] * 10)
+        emojis = emoji_map.get(self.name, ["😐"] * 10)
         return emojis[level - 1]
+    
