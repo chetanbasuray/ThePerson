@@ -1,30 +1,32 @@
-# Docs
-documentation:
-  - title: '^(?:[Dd][Oo][Cc][Ss])(?:\b|:|\s|$)'
-# Bugs and fixes
-bug:
-  - title: '^(?:[Bb][Uu][Gg](?:[Ff][Ii][Xx])?|[Hh][Oo][Tt][Ff][Ii][Xx])(?:\b|:|\s|$)'
-# Features
-enhancement:
-  - title: '^(?:[Ff][Ee][Aa][Tt]|[Ff][Ee][Aa][Tt][Uu][Rr][Ee])(?:\b|:|\s|$)'
-# UI
-ui:
-  - title: '^(?:[Uu][Ii])(?:\b|:|\s|$)'
-# Formatting
-format:
-  - title: '^(?:[Ff][Oo][Rr][Mm][Aa][Tt])(?:\b|:|\s|$)'
-# Refactors
-refactor:
-  - title: '^(?:[Rr][Ee][Ff][Aa][Cc][Tt]|[Rr][Ee][Ff][Aa][Cc][Tt][Oo][Rr])(?:\b|:|\s|$)'
-# Work in progress
-"work in progress":
-  - title: '^(?:[Ww][Ii][Pp])(?:\b|:|\s|$)'
-# Experiments
-experiment:
-  - title: '^(?:[Ee][Xx][Pp]|[Ee][Xx][Pp][Ee][Rr][Ii][Mm][Ee][Nn][Tt])(?:\b|:|\s|$)'
-# Miscellaneous
-miscellaneous:
-  - title: '^(?:[Mm][Ii][Ss][Cc])(?:\b|:|\s|$)'
-# Tasks
-task:
-  - title: '^(?:[Tt][Aa][Ss][Kk])(?:\b|:|\s|$)'
+version: 1
+labels:
+  # Docs
+  - label: "documentation"
+    title: '^(?:[Dd][Oo][Cc][Ss])(?:\b|:|\s|$)'
+  # Bugs and fixes
+  - label: "bug"
+    title: '^(?:[Bb][Uu][Gg](?:[Ff][Ii][Xx])?|[Hh][Oo][Tt][Ff][Ii][Xx])(?:\b|:|\s|$)'
+  # Features
+  - label: "enhancement"
+    title: '^(?:[Ff][Ee][Aa][Tt]|[Ff][Ee][Aa][Tt][Uu][Rr][Ee])(?:\b|:|\s|$)'
+  # UI
+  - label: "ui"
+    title: '^(?:[Uu][Ii])(?:\b|:|\s|$)'
+  # Formatting
+  - label: "format"
+    title: '^(?:[Ff][Oo][Rr][Mm][Aa][Tt]|[Ss][Tt][Yy][Ll][Ee])(?:\b|:|\s|$)'
+  # Refactors
+  - label: "refactor"
+    title: '^(?:[Rr][Ee][Ff][Aa][Cc][Tt]|[Rr][Ee][Ff][Aa][Cc][Tt][Oo][Rr])(?:\b|:|\s|$)'
+  # Work in progress
+  - label: "work in progress"
+    title: '^(?:[Ww][Ii][Pp])(?:\b|:|\s|$)'
+  # Experiments
+  - label: "experiment"
+    title: '^(?:[Ee][Xx][Pp]|[Ee][Xx][Pp][Ee][Rr][Ii][Mm][Ee][Nn][Tt])(?:\b|:|\s|$)'
+  # Miscellaneous
+  - label: "miscellaneous"
+    title: '^(?:[Mm][Ii][Ss][Cc])(?:\b|:|\s|$)'
+  # Tasks
+  - label: "task"
+    title: '^(?:[Tt][Aa][Ss][Kk])(?:\b|:|\s|$)'
