@@ -61,15 +61,18 @@ If you are interested in completing a task:
 #### Note:
 Each task issue is labeled with its approximate difficulty level; to ensure 
 fair distribution of tasks amongst contributors, **please try to complete tasks 
-labeled with your level of coding experience only**
+labeled with your level of coding experience only**.
+
+However, if a task has been left untaken for a long time, feel free to claim 
+the task no matter the labeled difficulty.
 
 ## 🏡 Be Part of TheTown!
 
 In the root directory of this repo, you will see `the_town.py`. Add yourself 
 as an instance of `Person`!
 
-Read [CONTRIBUTING](.github/CONTRIBUTING.md) to get started. Any PR not following the guidelines 
-under "TheTown" will be closed.
+Read [CONTRIBUTING](.github/CONTRIBUTING.md) to get started. Any PR not 
+following the guidelines under "TheTown" will be closed.
 
 ### 📖 Town Laws:
 - Only edit your own code, even if you see a mistake someone made. That's their 

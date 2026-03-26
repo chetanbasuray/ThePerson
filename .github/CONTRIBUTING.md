@@ -212,6 +212,9 @@ To ensure fair distribution of tasks amongst contributors, **please
 try to complete tasks labeled with your level of coding experience only** 
 (everyone should have a chance to contribute).
 
+However, if a task has been left untaken for a long time, feel free to claim 
+the task no matter the labeled difficulty.
+
 #### Regarding the use of AI:
 The purpose of this project is to provide a learning opportunity for growing 
 developers, and using AI to complete [tasks](#-task-issues) defeats this 
