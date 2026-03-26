@@ -302,3 +302,44 @@ class Person:
             IndexError: If the sequence is empty.
         """
         return random.choice(iterable)
+
+    def compliment(self, target: Person) -> str:
+        """Return a random compliment addressed to another person.
+
+        Args:
+            target (Person): The person receiving the compliment.
+
+        Returns:
+            str: A compliment message including the target's name.
+
+        Raises:
+            TypeError: If target is not a Person instance.
+            ValueError: If target has no name set.
+        """
+
+        if not isinstance(target, Person):
+            raise TypeError(
+                f"'target' must be a Person, got {type(target).__name__}"
+            )
+
+        if target.profile.name is None:
+            raise ValueError(
+                "target must have a name to receive a compliment"
+            )
+
+        compliments = [
+            "{name}, I brag to all my friends about you.",
+            "{name}, you are more fun than anyone I know.",
+            "{name}, you just made my day.",
+            "{name}, you are one of the strongest people I know.",
+            "{name}, you look great today.",
+            "{name}, you have the best smile.",
+            "{name}, your outlook on life is amazing.",
+            "{name}, you light up the room.",
+            "{name}, you make a bigger impact than you realize.",
+            "{name}, you are always so helpful.",
+            "{name}, you are so sweet.",
+        ]
+
+        message = random.choice(compliments)
+        return message.format(name=target.profile.name)
