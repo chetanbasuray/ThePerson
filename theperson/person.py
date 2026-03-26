@@ -344,4 +344,3 @@ class Person:
         message = random.choice(compliments)
         return message.format(name=target.profile.name)
         
-        
