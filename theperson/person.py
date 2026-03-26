@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import random
 import time
-from typing import TextIO
+from typing import Any, Iterable, TextIO
 from datetime import date
 from dataclasses import dataclass, field
 
@@ -287,3 +287,19 @@ class Person:
                 self.say(f"• {task}...")
                 time.sleep(delay)
             self.say(f"{self.profile.name} has completed all the tasks.")
+
+    @staticmethod
+    def choose(iterable: Iterable[Any]) -> Any:
+        """
+        Choose and return a random element from the given iterable.
+
+        Args:
+            iterable: An iterable (e.g., list, tuple, set).
+
+        Returns:
+            A random element from the iterable.
+
+        Raises:
+            IndexError: If the iterable is empty.
+        """
+        return random.choice(list(iterable))
