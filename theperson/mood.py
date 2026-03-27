@@ -160,7 +160,10 @@ class Mood:
         self.intensity = 0.0
 
     def is_neutral(self) -> bool:
-        """Return True if the mood is effectively neutral (name is neutral or intensity is 0)."""
+        """Return True if the mood is effectively neutral.
+
+        A mood is neutral if its name is 'neutral' or its intensity is 0.
+        """
         return self.name == "neutral" or self.intensity == 0.0
 
     def is_positive(self) -> bool:
