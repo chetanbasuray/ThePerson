@@ -67,11 +67,14 @@ further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project owner (for now, this can be done via a 
-discussion thread under the Discussions tab in the repository's page). All 
-complaints will be reviewed and investigated and will result in a response that 
-is deemed necessary and appropriate to the circumstances. The project team is 
-obligated to maintain confidentiality with regard to the reporter of an 
+reported by contacting the project owner. For now, this can be done via a 
+discussion thread under the Discussions tab in the repository's page, or a 
+private vulnerability reporting. A proper email address for community 
+support will be set up soon.
+
+All complaints will be reviewed and investigated and will result in a response 
+that is deemed necessary and appropriate to the circumstances. The project team 
+is obligated to maintain confidentiality with regard to the reporter of an 
 incident.
 
 Project maintainers who do not follow or enforce the Code of Conduct in good
