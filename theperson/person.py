@@ -290,8 +290,7 @@ class Person:
 
     @staticmethod
     def choose(iterable: Iterable[Any]) -> Any:
-        """
-        Choose and return a random element from the given iterable.
+        """Choose and return a random element from the given iterable.
 
         Args:
             iterable: An iterable (e.g., list, tuple, set).
