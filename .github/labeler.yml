@@ -13,7 +13,7 @@ labels:
   - label: "ui"
     title: '^(?:[Uu][Ii])(?:\b|:|\s|$)'
   # Formatting
-  - label: "format"
+  - label: "style"
     title: '^(?:[Ff][Oo][Rr][Mm][Aa][Tt]|[Ss][Tt][Yy][Ll][Ee])(?:\b|:|\s|$)'
   # Refactors
   - label: "refactor"
