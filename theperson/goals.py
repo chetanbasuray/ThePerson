@@ -1,5 +1,6 @@
 """
-Module containing the Goal and Goals classes for tracking a person's goals.
+Module containing the Goal and Goals classes for tracking a person's 
+goals.
 """
 
 from __future__ import annotations
