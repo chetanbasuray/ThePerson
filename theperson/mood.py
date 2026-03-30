@@ -1,4 +1,6 @@
-"""Module containing the Mood class for tracking a person's emotional state."""
+"""
+Module containing the Mood class for tracking a person's emotional state.
+"""
 
 from __future__ import annotations
 
