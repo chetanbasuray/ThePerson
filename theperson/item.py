@@ -9,7 +9,7 @@ class Item:
     def __init__(
         self,
         name: str,
-        value: float = 0.0,
+        value: float | None = None,
         stackable: bool = True,
     ) -> None:
         """Initialise a base item.
@@ -26,9 +26,11 @@ class Item:
         """
         if not isinstance(name, str) or not name.strip():
             raise ValueError("'name' must be a non-empty string")
-        if not isinstance(value, (int, float)):
+        if value is None:
+            pass
+        elif not isinstance(value, (int, float)):
             raise TypeError(
-                "'value' must be a number, got type "
+                "'value' must be a number or None, got type "
                 f"'{type(value)}' instead"
             )
         if not isinstance(stackable, bool):
@@ -38,12 +40,16 @@ class Item:
             )
 
         self.name = name.strip()
-        self.value = float(value)
+        self.value = None if value is None else float(value)
         self.stackable = stackable
 
     def describe(self) -> str:
         """Return a description of the item."""
         return f"{self.name} (value: {self.value})"
+
+    def clone(self) -> "Item":
+        """Return a copy of this item."""
+        return Item(self.name, value=self.value, stackable=self.stackable)
 
     def __hash__(self) -> int:
         """Return a hash value for dictionary/set usage."""
@@ -79,7 +85,7 @@ class Food(Item):
         calories: int | None = None,
         cooked: bool | None = None,
         brand: str | None = None,
-        value: float = 0.0,
+        value: float | None = None,
     ) -> None:
         """Initialise a food item.
 
@@ -119,6 +125,29 @@ class Food(Item):
         self.cooked = cooked
         self.brand = brand.strip() if isinstance(brand, str) else None
 
+    def clone(self) -> Food:
+        """Return a copy of this food item."""
+        return Food(
+            self.name,
+            calories=self.calories,
+            cooked=self.cooked,
+            brand=self.brand,
+            value=self.value,
+        )
+    
+    def __hash__(self) -> int:
+        """Return a hash value for dictionary/set usage."""
+        return hash((self.name, self.brand, self.__class__))
+    
+    def __eq__(self, other: object) -> bool:
+        """Return whether two items are equal."""
+        return (
+            isinstance(other, Food)
+            and self.name == other.name
+            and self.__class__ == other.__class__
+            and self.brand == other.brand
+        )
+        
 
 class Electronic(Item):
     """An electronic item."""
@@ -128,7 +157,7 @@ class Electronic(Item):
         name: str,
         brand: str,
         battery: int = 100,
-        value: float = 0.0,
+        value: float | None = None,
     ) -> None:
         """Initialise an electronic item.
 
@@ -163,6 +192,28 @@ class Electronic(Item):
         self.brand = brand.strip()
         self.battery = battery
 
+    def clone(self) -> Electronic:
+        """Return a copy of this electronic item."""
+        return Electronic(
+            self.name,
+            brand=self.brand,
+            battery=self.battery,
+            value=self.value,
+        )
+    
+    def __hash__(self) -> int:
+        """Return a hash value for dictionary/set usage."""
+        return hash((self.name, self.brand, self.__class__))
+    
+    def __eq__(self, other: object) -> bool:
+        """Return whether two items are equal."""
+        return (
+            isinstance(other, Electronic)
+            and self.name == other.name
+            and self.__class__ == other.__class__
+            and self.brand == other.brand
+        )
+
 
 class Valuable(Item):
     """A valuable item such as jewellery, gold, or art."""
@@ -175,6 +226,10 @@ class Valuable(Item):
             value: The value of the item.
         """
         super().__init__(name, value=value, stackable=False)
+
+    def clone(self) -> Valuable:
+        """Return a copy of this valuable item."""
+        return Valuable(self.name, value=self.value)
 
 
 class Weapon(Item):
@@ -192,3 +247,7 @@ class Weapon(Item):
             value: The value of the weapon.
         """
         super().__init__(name, value=value, stackable=False)
+
+    def clone(self) -> Weapon:
+        """Return a copy of this weapon."""
+        return Weapon(self.name, value=self.value)

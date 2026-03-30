@@ -78,7 +78,7 @@ class Inventory:
             )
         else:
             for _ in range(quantity):
-                self.unique_items.append(item)
+                self.unique_items.append(item.clone())
 
     def remove_item(self, item: Item, quantity: int = 1) -> None:
         """Remove an item from the inventory.
@@ -167,6 +167,11 @@ class Inventory:
 
     def has_item(self, item: Item) -> bool:
         """Return True if the inventory contains the given item."""
+        if not isinstance(item, Item):
+            raise TypeError(
+                f"'item' must be an 'Item' object, got type "
+                f"'{type(item).__name__}' instead'"
+            )
         if item.stackable:
             return item in self.stackable_items
         return item in self.unique_items
@@ -225,9 +230,10 @@ class Inventory:
     def total_value(self) -> float:
         """Return the total value of all items in the inventory."""
         stackable_value = sum(
-            item.value * qty for item, qty in self.stackable_items.items()
+            (item.value or 0.0) * qty
+            for item, qty in self.stackable_items.items()
         )
-        unique_value = sum(item.value for item in self.unique_items)
+        unique_value = sum((item.value or 0.0) for item in self.unique_items)
         return stackable_value + unique_value
 
     def __str__(self) -> str:
