@@ -41,7 +41,7 @@ class Mood:
                        Defaults to 0.0.
 
         Raises:
-            ValueError: If the mood name is not recognised or intensity
+            ValueError: If the mood name is not recognized or intensity
                         is out of range.
         """
         self.name = Mood._validate_name(name)
@@ -60,7 +60,7 @@ class Mood:
 
         Raises:
             TypeError: If name is not a string.
-            ValueError: If name is not a recognised mood.
+            ValueError: If name is not a recognized mood.
 
         Returns:
             The validated mood name.
@@ -211,30 +211,47 @@ class Mood:
     def express(self) -> str:
         """Return an emoji that represents the current mood and intensity.
 
-        Neutral always maps to 😐. For all other moods, the emoji is chosen
-        based on the intensity value (0–1 scale mapped to 1–10 internally).
+        Neutral, or intensity==0.0, always maps to 😐. For all other moods,
+        the emoji is chosen based on the intensity value (0–1 scale mapped to
+        1–10 internally).
+        
+        Note that this method uses banker's rounding to round non-whole
+        intensities. When a number is exactly halfway between two potential
+        rounded values (e.g., ending in .5), Python rounds it to the nearest
+        even number.
 
         Returns:
             A single emoji string representing the mood.
         """
-        if self.name == "neutral":
+        if self.is_neutral():
             return "😐"
 
         # Map 0.0–1.0 intensity to 1–10 scale
         level = max(1, round(self.intensity * 10))
 
         emoji_map: dict[str, list[str]] = {
-            "happy": ["🙂", "🙂", "😊", "😊", "😄", "😄", "😁", "😁", "🤩", "🤩"],
-            "sad": ["😕", "😕", "🙁", "🙁", "☹️", "☹️", "😔", "😔", "🥺", "😭"],
-            "angry": ["😤", "😤", "😠", "😠", "😡", "😡", "🤬", "🤬", "💢", "💢"],
-            "anxious": ["😟", "😟", "😰", "😰", "😨", "😨", "😱", "😱", "🫨", "🫨"],
-            "excited": ["🙂", "🙂", "😄", "😄", "🤩", "🤩", "🎉", "🎉", "🥳", "🥳"],
-            "tired": ["😑", "😑", "😴", "😴", "🥱", "🥱", "😫", "😫", "💤", "💤"],
-            "surprised": ["😮", "😮", "😲", "😲", "🤯", "🤯", "😱", "😱", "🫢", "🫢"],
-            "disgusted": ["😕", "😕", "🤢", "🤢", "🤮", "🤮", "😖", "😖", "🤢", "🤮"],
-            "fearful": ["😟", "😟", "😨", "😨", "😱", "😱", "🫨", "🫨", "😰", "😰"],
-            "calm": ["😌", "😌", "🧘", "🧘", "😇", "😇", "☮️", "☮️", "🕊️", "🕊️"],
-            "confused": ["🤔", "🤔", "😕", "😕", "🫤", "🫤", "😵", "😵", "😵‍💫", "😵‍💫"],
+            "happy":
+                ["🙂", "🙂", "😊", "😊", "😄", "😄", "😁", "😁", "🤩", "🤩"],
+            "sad":
+                ["😕", "😕", "🙁", "🙁", "☹️", "☹️", "😔", "😔", "🥺", "😭"],
+            "angry":
+                ["😤", "😤", "😠", "😠", "😡", "😡", "🤬", "🤬", "💢", "💢"],
+            "anxious":
+                ["😟", "😟", "😰", "😰", "😨", "😨", "😱", "😱", "🫨", "🫨"],
+            "excited":
+                ["🙂", "🙂", "😄", "😄", "🤩", "🤩", "🎉", "🎉", "🥳", "🥳"],
+            "tired":
+                ["😑", "😑", "😴", "😴", "🥱", "🥱", "😫", "😫", "💤", "💤"],
+            "surprised":
+                ["😮", "😮", "😲", "😲", "🤯", "🤯", "😱", "😱", "🫢", "🫢"],
+            "disgusted":
+                ["😕", "😕", "🤢", "🤢", "🤮", "🤮", "😖", "😖", "🤢", "🤮"],
+            "fearful":
+                ["😟", "😟", "😨", "😨", "😱", "😱", "🫨", "🫨", "😰", "😰"],
+            "calm":
+                ["😌", "😌", "🧘", "🧘", "😇", "😇", "☮️", "☮️", "🕊️", "🕊️"],
+            "confused":
+                ["🤔", "🤔", "😕", "😕", "🫤", "🫤", "😵", "😵", "😵‍💫", "😵‍💫"],
         }
 
         emojis = emoji_map.get(self.name, ["😐"] * 10)
