@@ -33,7 +33,7 @@ class Mood:
     def __init__(self,
                  name: str = "neutral",
                  intensity: float = 0.0) -> None:
-        """Initialise the mood.
+        """Initialize the mood.
 
         Args:
             name: The name of the mood. Defaults to 'neutral'.
