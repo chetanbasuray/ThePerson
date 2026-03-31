@@ -5,7 +5,7 @@ labels:
     title: '^(?:[Dd][Oo][Cc][Ss])(?:\b|:|\s|$)'
   # Bugs and fixes
   - label: "bug"
-    title: '^(?:[Bb][Uu][Gg](?:[Ff][Ii][Xx])?|[Hh][Oo][Tt][Ff][Ii][Xx])(?:\b|:|\s|$)'
+    title: '^(?:[Bb][Uu][Gg](?:[Ff][Ii][Xx])?|[Hh][Oo][Tt][Ff][Ii][Xx]|[Ff][Ii][Xx])(?:\b|:|\s|$)'
   # Features
   - label: "enhancement"
     title: '^(?:[Ff][Ee][Aa][Tt]|[Ff][Ee][Aa][Tt][Uu][Rr][Ee])(?:\b|:|\s|$)'
@@ -13,7 +13,7 @@ labels:
   - label: "ui"
     title: '^(?:[Uu][Ii])(?:\b|:|\s|$)'
   # Formatting
-  - label: "format"
+  - label: "style"
     title: '^(?:[Ff][Oo][Rr][Mm][Aa][Tt]|[Ss][Tt][Yy][Ll][Ee])(?:\b|:|\s|$)'
   # Refactors
   - label: "refactor"
