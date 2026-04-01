@@ -41,3 +41,6 @@ if __name__ == "__main__":
     joe.mood.set_mood("calm", 0.9)
     joe.goals.add_goal("master git")
     joe.greet(morpheus)
+    
+    morpheus.greet(joe)
+    print(morpheus.compliment(joe))
