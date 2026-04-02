@@ -10,9 +10,9 @@ and experts are very welcome here.
 This project is purely for entertainment purposes, so _do_ have fun and let 
 your creativity flow.
 
-If you want to contribute to ThePerson, I recommend you take the time to read 
-these contributing guidelines, or at least skim through it to get an idea of 
-how to make good contributions.
+If you want to contribute to ThePerson, I recommend taking the time to read 
+these contributing guidelines (or even use your AI assistant to summarize this 
+document for you).
 
 ---
 
@@ -58,8 +58,8 @@ ones.
 - A recognized IDE / code editor, for example:
   - Visual Studio Code (with a proper linter or code analyzer installed)
   - JetBrains IDEs (PyCharm, IntelliJ, WebStorm, etc.)
-  - Visual Studio
   - Eclipse
+  - Xcode
   - **NOT** the GitHub web editor or a basic text editor
 
 [^ TOC](#-table-of-contents)
@@ -138,29 +138,21 @@ enhancement to the project or fixing a bug)
 6. Create and submit a pull request.
 7. Optional: Request a review from a maintainer.
 
-We will likely need to discuss the changes you make and apply some tweaks 
-and polishes before approval.
-
-You should receive a notification/email once your changes have been merged 
-into the main branch of this project.
+Please try to stay engaged with your PR and **avoid abandoning your work**. You 
+should receive a notification/email once your changes have been merged into the 
+main branch of this project.
 
 ### ⚠️ THINGS TO KEEP IN MIND
 - **Rebase > Merge**: When updating a branch, **always use a rebase** and 
-  resolve conflicts. This is to keep the commit history nice and linear. The 
-  only time you should see a merge commit is when your pull request is 
-  merged into upstream `main`.
-- **Avoid working directly on `main`**; always create a new branch on your fork.
-- To avoid **conflicts, always** remember to update your local fork 
+  resolve conflicts.
+- **Do not work directly on `main`**; always create a new branch on your fork.
+- To avoid conflicts, **always remember to update your local fork** 
   (`git pull`) before working.
 - If you forgot to update your fork before working, run `git pull --rebase` 
   and resolve conflicts (if any).
   - If you run into any trouble during conflict resolution, or are not sure 
     how to resolve a conflict, tag a maintainer/reviewer in an appropriate 
-    issue or PR comments section, or in a [Discussion][repo-disc], for help.
-- If you ever need to force-push, use `--force-with-lease` to prevent losing 
-  any work.
-- Minimize how much code you touch outside what you are working on; change 
-  only what you are focusing on doing and avoid changing others' code.
+    issue or PR comments section for help.
 
 [^ TOC](#-table-of-contents)
 
@@ -178,29 +170,8 @@ Some issues will be opened in the [Issues tab][repo-issues] on GitHub, labeled
 
 **When writing the pull request**:
 - Start the PR title with `TASK: `.
-- In your PR description, **ensure you use an issue-closing keyword phrase:**
-
-```markdown
-# TASK: Title of task (#123)
-
-This is a description of the task completed. 
-Blah blah blah.
-
-Closes #123
-```
-
-Where `#123` is the issue number.
-
-Other issue-closing keywords you can use:
-* close
-* closes
-* closed
-* fix
-* fixes
-* fixed
-* resolve
-* resolves
-* resolved
+- In your PR description, **ensure you use an issue-closing keyword phrase**.
+  - e.g., `Closes #123`, where `#123` is the issue number.
 
 > Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
 > tasks or open tasks with no assignees)
@@ -247,10 +218,6 @@ Key things to keep in mind include:
 - **Line separations** (2 blank lines around classes and functions, etc.)
 - **Order of import statements** (standard → third-party → local)
 
-Take a look at the existing code on the repo to get an idea of the code style.
-
-If you are unfamiliar with PEP 8, please [give it a quick read][pep-8].
-
 ===============================================
 
 > `2.` Always assume the user is stupid
@@ -263,8 +230,8 @@ would never think of.
 
 > `3.` Don't be boring
 
-Give your code some _personality_. Avoid dull, flavorless code. You can even 
-add a little joke comment if your code starts to look sleep-inducing.
+Give your code some _✨personality✨_. Avoid dull, flavorless code. You can 
+even add a little joke comment if your code starts to look sleep-inducing.
 
 [^ TOC](#-table-of-contents)
 
@@ -310,7 +277,7 @@ When submitting a pull request:
   feedback**.
 
 Pull requests that appear to be:
-- primarily AI-generated,
+- primarily AI-generated (including PR descriptions or comments),
 - created by a bot/automated account,
 - or lacking human oversight
 may be **closed without merging**.
