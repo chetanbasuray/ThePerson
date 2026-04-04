@@ -54,7 +54,7 @@ class LifeDates:
 
 class Person:
     """A class to represent a person."""
-    
+
     def __init__(self,
                  profile: Profile | None = None,
                  physical: Physical | None = None,
@@ -64,7 +64,7 @@ class Person:
                  goals: Goals | None = None,
                  inventory: Inventory | None = None,) -> None:
         """Initialize the person's attributes."""
-        
+
         self.profile = profile if profile is not None else Profile()
         self.physical = physical if physical is not None else Physical()
         self.professional = (
@@ -138,7 +138,7 @@ class Person:
             print(*things, sep=sep, end=end, flush=flush)
             if index < repeat - 1 and delay_seconds > 0:
                 time.sleep(delay_seconds)
-    
+
     @staticmethod
     def wave() -> None:
         """Wave a hand to greet or bid farewell.
@@ -220,7 +220,7 @@ class Person:
 
         person = target if target is not None else self
         attr = f"{day}_date"
-        
+
         if not hasattr(person.life_dates, attr):
             raise AttributeError(
                 f"'{day}' is not a recognised celebration "
@@ -237,7 +237,7 @@ class Person:
             )
 
         today = date.today()
-        
+
         if target is not None:
             default_message = (
                 message or f"Happy {day.capitalize()}, {target.profile.name}! "
@@ -269,7 +269,7 @@ class Person:
                 self.say(not_today_message)
         else:
             self.say(default_message)
-    
+
     def existential_crisis(self) -> None:
         """Say a random existential crisis message."""
         messages = [
@@ -283,7 +283,7 @@ class Person:
         ]
 
         self.say(random.choice(messages))
-    
+
     def do_tasks(self,
                  tasks: str | list[str],
                  durations: float | list[float]) -> None:
@@ -309,28 +309,27 @@ class Person:
                 If the number of tasks does not match the number of durations.
                 (except if len(durations)==1)
         """
-        
         if isinstance(tasks, str):
             tasks: list = [tasks]
         elif not isinstance(tasks, list):
             raise TypeError("'tasks' must be a string or a list of strings")
-        
+
         if not all(isinstance(task, str) for task in tasks):
             raise TypeError("All tasks must be strings")
-        
+
         if isinstance(durations, float):
             durations: list = [durations] * len(tasks)
         elif not isinstance(durations, list):
             raise TypeError("'durations' must be a float or a list of floats")
-        
+
         if not all(isinstance(duration, float) for duration in durations):
             raise TypeError("All 'durations' must be a float")
-        
+
         if len(tasks) != len(durations):
             raise ValueError(
                 "The number of tasks and durations must match"
             )
-        
+
         if len(tasks) == 0:
             self.say("No tasks provided.")
         else:
@@ -340,7 +339,7 @@ class Person:
                 self.say(f"• {task}...")
                 time.sleep(delay)
             self.say(f"{self.profile.name} has completed all the tasks.")
-    
+
     @staticmethod
     def choose(iterable: Sequence[Any]) -> Any:
         """Choose and return a random element from the given sequence.
