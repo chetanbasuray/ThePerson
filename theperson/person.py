@@ -170,7 +170,8 @@ class Person:
         }
 
         emoji = crying_emojis.get(
-            emoji_type, random.choice(list(crying_emojis.values()))
+            # Stringify to comply with type hint when 'emoji_type' is None
+            str(emoji_type), random.choice(list(crying_emojis.values()))
         )
         print(emoji)
 
