@@ -404,7 +404,7 @@ class Person:
 
         Args:
             contents: The content to be written, converted to str.
-            file: A text I/O stream with a write(str) method.
+            file: A text I/O stream with a 'write(str)' method.
 
         Raises:
             TypeError: If file has no callable write method.
