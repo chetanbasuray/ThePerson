@@ -21,6 +21,7 @@ VALID_MESSAGES = [
     "What if I'm just a simulated person living in a Python script???"
 ]
 
+
 def test_existential_crisis_prints_valid_message(
     capsys: pytest.CaptureFixture[str]
 ) -> None:
