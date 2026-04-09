@@ -457,7 +457,7 @@ class Person:
         
         Args:
             increment: Amount to increase age by. Defaults to 1.
-            height_increment: Amount to increase height by in meters. 
+            height_increment: Amount to increase height by in meters.
                 Defaults to None.
             check_birthday: Flag to enable check if today is
                 the person's birthday. Defaults to True.
@@ -469,9 +469,9 @@ class Person:
             TypeError: If height_increment is not a float.
         """
         if self.profile.age is None:
-            raise ValueError("Cannot increment - age is not set.")
+            raise ValueError("Cannot increment, age is not set.")
         if check_birthday and date.today() != self.life_dates.birthday_date:
-            raise ValueError("Cannot age up - today is not the birthday.")
+            raise ValueError("Cannot age up, today is not the birthday.")
 
         if height_increment is not None:
             if not isinstance(height_increment, float):
@@ -480,7 +480,7 @@ class Person:
                     f"got {type(height_increment).__name__}"
                 )
             if self.physical.height is None:
-                raise ValueError("Cannot increment - height is not set.")
+                raise ValueError("Cannot increment, height is not set.")
             self.physical.height += height_increment
 
         self.profile.age += increment
