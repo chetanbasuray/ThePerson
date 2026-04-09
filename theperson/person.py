@@ -419,3 +419,34 @@ class Person:
             )
 
         file.write(str(contents))
+
+    @staticmethod
+    def smile(smile_type: str | None = None) -> None:
+        """Shows a smiling or grinning face.
+        
+        Args:
+            smile_type (str | None): 
+                The type of smile to show (e.g., 'small', 'smile', 
+                'grin', 'wide'). Defaults to random if not given or not found.
+        
+        Raises:
+            TypeError: if smile_type is given but not a str.
+        """
+        smiling_emojis = {
+            "small": "\U0001F642",  # 🙂 slightly smiling face
+            "smile": "\U0001F60A",  # 😊 smiling face, smiling eyes
+            "grin": "\U0001F601",   # 😁 grinning face with smiling eyes
+            "wide": "\U0001F604",   # 😄 open mouth with smiling eyes
+        }
+        
+        if smile_type is not None and not isinstance(smile_type, str):
+            raise TypeError(
+                "'smile_type' must be a str or None, "
+                f"got {type(smile_type).__name__}"
+            )
+
+        smiley = smiling_emojis.get(
+            str(smile_type), random.choice(list(smiling_emojis.values()))
+        )
+
+        print(smiley)
