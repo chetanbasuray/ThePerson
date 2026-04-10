@@ -468,10 +468,16 @@ class Person:
                 when height_increment is provided.
             TypeError: If height_increment is not a float.
         """
+        today = date.today()
+        birthday = self.life_dates.birthday_date
+        
         if self.profile.age is None:
             raise ValueError("Cannot increment, age is not set.")
-        if check_birthday and date.today() != self.life_dates.birthday_date:
-            raise ValueError("Cannot age up, today is not the birthday.")
+        if check_birthday:
+            if birthday is None:
+                raise ValueError("Cannot age up, birthday date is not set.")
+            elif (today.month, today.day) != (birthday.month, birthday.day):
+                raise ValueError("Cannot age up, today is not the birthday.")
 
         if height_increment is not None:
             if not isinstance(height_increment, float):
