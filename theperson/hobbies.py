@@ -7,8 +7,7 @@ from __future__ import annotations
 
 
 class Hobby:
-    """
-    A simple class to represent a hobby.
+    """A simple class to represent a hobby.
     
     Basically just a wrapper for a name right now, but could be 
     expanded later with levels.
@@ -33,9 +32,7 @@ class Hobby:
 
 
 class Hobbies:
-    """
-    Manages a collection of hobbies.
-    """
+    """Manages a collection of hobbies."""
 
     def __init__(self, hobbies: list[Hobby] | None = None) -> None:
         # Start with an empty list if no hobbies are provided.
@@ -60,8 +57,7 @@ class Hobbies:
         self.list.remove(hobby)
 
     def is_adhd(self) -> bool:
-        """
-        Checks if a person has too many hobbies.
+        """Checks if a person has too many hobbies.
         
         If someone has more than 5 hobbies, they might be 
         struggling to focus on just one!
