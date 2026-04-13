@@ -1,11 +1,12 @@
-from pathlib import Path
 import sys
 import pytest
+from pathlib import Path
 from typing import Sequence, Any
-from theperson.person import Person
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
+
+from theperson.person import Person
 
 
 @pytest.fixture(params=[
