@@ -14,6 +14,7 @@ from theperson.person import Person
     [1, 2, 3, 4],
     ["foo", 42, True],
     (10, 20, 30),
+    range(3),
 ])
 def sample_iterable(request) -> Sequence[Any]:
     """Fixture for providing various non-empty iterables."""
@@ -24,6 +25,16 @@ def sample_iterable(request) -> Sequence[Any]:
 def empty_iterable(request):
     """Fixture for empty iterables."""
     return request.param
+
+
+def test_choose_set_raises_typeerror():
+    with pytest.raises(TypeError):
+        Person.choose({1, 2, 3})
+
+
+def test_choose_dict_raises_keyerror():
+    with pytest.raises(KeyError):
+        Person.choose({"a": 1})
 
 
 def test_choose_non_empty(sample_iterable):
