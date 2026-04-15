@@ -240,8 +240,8 @@ class Person:
         
         if target is not None:
             default_message = (
-                    message or f"Happy {day.capitalize()}, {target.profile.name}! "
-                               f"\U0001f389"
+                message or f"Happy {day.capitalize()}, {target.profile.name}! "
+                           f"\U0001f389"
             )
             unknown_message = f"I don't know {target.profile.name}'s {day}..."
             not_today_message = (
