@@ -36,7 +36,19 @@ class Hobbies:
 
     def __init__(self, hobbies: list[Hobby] | None = None) -> None:
         # Start with an empty list if no hobbies are provided.
-        self.list: list[Hobby] = hobbies if hobbies is not None else []
+        if hobbies is None:
+            self.list: list[Hobby] = []
+            return
+
+        if not isinstance(hobbies, list):
+            raise TypeError(
+                f"'hobbies' must be a list[Hobby], got {type(hobbies).__name__}"
+            )
+
+        if not all(isinstance(hobby, Hobby) for hobby in hobbies):
+            raise TypeError("'hobbies' must contain only Hobby objects")
+
+        self.list = list(hobbies)
 
     def add_hobby(self, name: str) -> Hobby:
         """Add a new hobby to the list. Duplicates not allowed."""

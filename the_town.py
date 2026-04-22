@@ -1,6 +1,7 @@
 """Add yourself as a Person instance here!"""
 
-from theperson.person import Person, Profile, Professional
+from theperson.hobbies import Hobbies
+from theperson.person import Person, Personal, Profile, Professional
 
 
 if __name__ == "__main__":
@@ -28,14 +29,19 @@ if __name__ == "__main__":
     joe = Person(
         profile=Profile(
             name="Joe", 
-            gender="male", 
-            hobbies=["coding", "chess", "hiking"]
+            gender="male",
+        ),
+        personal=Personal(
+            hobbies=Hobbies()
         ),
         professional=Professional(
             occupation="Product Owner", 
             skills=["product design", "prototyping"]
         )
     )
+    joe.hobbies.add_hobby("coding")
+    joe.hobbies.add_hobby("chess")
+    joe.hobbies.add_hobby("hiking")
 
     joe.introduce()
     joe.mood.set_mood("calm", 0.9)
@@ -49,13 +55,18 @@ if __name__ == "__main__":
         profile=Profile(
             name="Chetan",
             gender="Male",
-            hobbies=["Music", "Reading", "Movies"]
+        ),
+        personal=Personal(
+            hobbies=Hobbies()
         ),
         professional=Professional(
             occupation="Software Engineer",
             skills=["Software Architecture", "Web Development"]
         )
     )
+    chetan.hobbies.add_hobby("Music")
+    chetan.hobbies.add_hobby("Reading")
+    chetan.hobbies.add_hobby("Movies")
 
     chetan.introduce()
     chetan.say("Hello everyone! I'm excited to be part of TheTown. 🚀")

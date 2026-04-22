@@ -22,7 +22,14 @@ class Profile:
     age: int | None = None
     gender: str | None = None
     nationality: str | None = None
-    hobbies: list[str] = field(default_factory=list)
+
+
+@dataclass
+class Personal:
+    """Personal interests and goals."""
+
+    hobbies: Hobbies = field(default_factory=Hobbies)
+    goals: Goals = field(default_factory=Goals)
 
 
 @dataclass
@@ -62,6 +69,7 @@ class Person:
                  professional: Professional | None = None,
                  life_dates: LifeDates | None = None,
                  mood: Mood | None = None,
+                 personal: Personal | None = None,
                  goals: Goals | None = None,
                  inventory: Inventory | None = None,
                  hobbies: Hobbies | None = None,) -> None:
@@ -76,17 +84,44 @@ class Person:
             life_dates if life_dates is not None else LifeDates()
         )
         self.mood = mood if mood is not None else Mood()
-        self.goals = goals if goals is not None else Goals()
         self.inventory = inventory if inventory is not None else Inventory()
-        self.hobbies = hobbies if hobbies is not None else Hobbies()
-        # If hobbies were provided in the profile, add them to the new system
-        if self.profile.hobbies:
-            for hobby_name in self.profile.hobbies:
+
+        if personal is not None:
+            if not isinstance(personal, Personal):
+                raise TypeError(
+                    f"'personal' must be Personal, got "
+                    f"{type(personal).__name__}"
+                )
+            self.personal = personal
+        else:
+            resolved_hobbies = hobbies if hobbies is not None else Hobbies()
+            resolved_goals = goals if goals is not None else Goals()
+            self.personal = Personal(
+                hobbies=resolved_hobbies,
+                goals=resolved_goals,
+            )
+
+        # Backward compatibility for legacy Profile(hobbies=[...]) callers.
+        legacy_hobbies = getattr(self.profile, "hobbies", None)
+        if legacy_hobbies:
+            if not isinstance(legacy_hobbies, list):
+                raise TypeError(
+                    "'profile.hobbies' must be a list[str] when provided"
+                )
+            if not all(isinstance(name, str) for name in legacy_hobbies):
+                raise TypeError(
+                    "'profile.hobbies' must contain only string names"
+                )
+            for hobby_name in legacy_hobbies:
                 try:
-                    self.hobbies.add_hobby(hobby_name)
+                    self.personal.hobbies.add_hobby(hobby_name)
                 except ValueError:
-                    # Ignore if the hobby was already added
+                    # Ignore if the hobby was already added.
                     pass
+
+        # Compatibility aliases for existing API users.
+        self.hobbies = self.personal.hobbies
+        self.goals = self.personal.goals
 
     def greet(self, target: Person | None = None) -> None:
         """Do a simple greeting and introduction.
